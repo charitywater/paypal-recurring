@@ -18,6 +18,7 @@ module PayPal
       attr_accessor :period
       attr_accessor :profile_id
       attr_accessor :reference
+      attr_accessor :custom
       attr_accessor :refund_type
       attr_accessor :return_url
       attr_accessor :start_at
@@ -138,6 +139,7 @@ module PayPal
           :payer_id,
           :token,
           :reference,
+          :custom,
           :item_category,
           :item_name,
           :item_amount,
@@ -182,6 +184,7 @@ module PayPal
           :payer_id,
           :token,
           :reference,
+          :custom,
           :start_at,
           :failed,
           :outstanding,
@@ -225,6 +228,7 @@ module PayPal
           :note,
           :profile_id,
           :reference,
+          :custom,
           :start_at,
           :outstanding,
           :ipn_url,
@@ -258,6 +262,7 @@ module PayPal
         params = collect(
           :transaction_id,
           :reference,
+          :custom,
           :refund_type,
           :amount,
           :currency,
