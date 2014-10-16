@@ -126,7 +126,11 @@ describe PayPal::Recurring::Request do
     end
 
     it "normalizes reference" do
-      subject.normalize_params(:reference => "abc").should == {:PROFILEREFERENCE => "abc", :PAYMENTREQUEST_0_CUSTOM => "abc", :PAYMENTREQUEST_0_INVNUM => "abc"}
+      subject.normalize_params(:reference => "abc").should == {:PROFILEREFERENCE => "abc", :PAYMENTREQUEST_0_INVNUM => "abc"}
+    end
+
+    it "normalizes custom" do
+      subject.normalize_params(:custom => "abc").should == {:PAYMENTREQUEST_0_CUSTOM => "abc"}
     end
 
     it "normalizes locale" do
