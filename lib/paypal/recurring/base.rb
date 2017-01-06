@@ -72,7 +72,7 @@ module PayPal
           :item_quantity
         ).merge(
           :payment_action => "Authorization",
-          :no_shipping => 1,
+          :no_shipping => 0,
           :L_BILLINGTYPE0 => "RecurringPayments"
         )
 
