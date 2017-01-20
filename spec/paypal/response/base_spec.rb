@@ -6,13 +6,13 @@ describe PayPal::Recurring::Response do
   describe ".mapping" do
     it "returns single item mapping" do
       response_class.mapping :foo => :bar
-      response = response_class.new(stub(:body => "bar=foo"))
+      response = response_class.new(double(:resp, body: "bar=foo"))
       response.foo.should == "foo"
     end
 
     it "returns item from array mapping" do
       response_class.mapping :foo => [:bar, :zaz]
-      response = response_class.new(stub(:body => "zaz=foo"))
+      response = response_class.new(double(:resp, body: "zaz=foo"))
       response.foo.should == "foo"
     end
   end
