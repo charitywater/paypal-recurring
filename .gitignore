@@ -14,3 +14,4 @@ doc/app
 *~
 .DS_Store
 .rvmrc
+.env
