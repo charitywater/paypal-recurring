@@ -25,7 +25,7 @@ describe PayPal::Recurring do
         config.sandbox = false
       end
 
-      PayPal::Recurring.sandbox.should be_false
+      PayPal::Recurring.sandbox.should be false
     end
   end
 

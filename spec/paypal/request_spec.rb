@@ -3,7 +3,7 @@ require "spec_helper"
 describe PayPal::Recurring::Request do
   describe "#client" do
     it "uses SSL" do
-      subject.client.use_ssl?.should be_true
+      subject.client.use_ssl?.should be true
     end
 
     it "verifies certificate" do

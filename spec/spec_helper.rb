@@ -5,6 +5,9 @@ Bundler.require
 require "paypal-recurring"
 require "vcr"
 require "active_support/all"
+require 'pry-byebug'
+require 'its'
+require 'rspec/collection_matchers'
 
 VCR.configure do |config|
   config.cassette_library_dir = File.dirname(__FILE__) + "/fixtures"
@@ -15,13 +18,15 @@ RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
 
   config.before do
+    FakeWeb.clean_registry
+
     PayPal::Recurring.configure do |config|
-      config.sandbox = true
-      config.username = "fnando.vieira+seller_api1.gmail.com"
-      config.password = "PRTZZX6JDACB95SA"
-      config.signature = "AJnjtLN0ozBP-BF2ZJrj5sfbmGAxAnf5tev1-MgK5Z8IASmtj-Fw.5pt"
-      config.seller_id = "F2RM85WS56YX2"
-      config.email = "fnando.vieira+seller.gmail.com"
+       config.sandbox = true
+       config.username = "cwsite_1319565654_biz_api1.gmail.com"
+       config.password = "1319565691"
+       config.signature = "AIDlgRrr6gKAPoeuzTuFOtK4INGJA3zNHwFL5o1gdsBGQg048aTTj.7W"
+       config.seller_id = "8PQPEHCYC73TS"
+       config.email = "cwsite_1319565654_biz.gmail.com"
     end
   end
 end

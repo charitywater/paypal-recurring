@@ -17,7 +17,7 @@ describe PayPal::Recurring::Response::Checkout do
       ppr.checkout
     }
 
-    its(:valid?) { should be_true }
+    its(:valid?) { should be true }
     its(:errors) { should be_empty }
     its(:checkout_url) { should == "#{PayPal::Recurring.site_endpoint}?cmd=_express-checkout&token=EC-6K296451S2213041J&useraction=commit" }
   end
@@ -26,7 +26,7 @@ describe PayPal::Recurring::Response::Checkout do
     use_vcr_cassette("checkout/failure")
     subject { PayPal::Recurring.new.checkout }
 
-    its(:valid?) { should be_false }
+    its(:valid?) { should be false }
     its(:errors) { should have(3).items }
   end
 end

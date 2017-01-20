@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-3t.sandbox.paypal.com/nvp
+    body:
+      encoding: US-ASCII
+      string: USER=cwsite_1319565654_biz_api1.gmail.com&PWD=1319565691&SIGNATURE=AIDlgRrr6gKAPoeuzTuFOtK4INGJA3zNHwFL5o1gdsBGQg048aTTj.7W&VERSION=72.0&TOKEN=EC-16942802DK365081S&METHOD=GetExpressCheckoutDetails
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - PayPal::Recurring/1.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2017 17:02:16 GMT
+      Server:
+      - Apache
+      X-Slr-Retry-Api:
+      - GetExpressCheckoutDetails
+      X-Paypal-Operation-Name:
+      - GetExpressCheckoutDetails
+      X-Paypal-Api-Rc:
+      - ''
+      Connection:
+      - close
+      Http-X-Pp-Az-Locator:
+      - sandbox.slc
+      Paypal-Debug-Id:
+      - 7b39f6a15de6a
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dappdispatcher_apit%26TIME%3D418480216%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
+        Expires=Thu, 19 Jan 2017 17:32:16 GMT; domain=.paypal.com; path=/; Secure;
+        HttpOnly
+      Content-Length:
+      - '1344'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: TOKEN=EC%2d16942802DK365081S&BILLINGAGREEMENTACCEPTEDSTATUS=1&CHECKOUTSTATUS=PaymentActionNotInitiated&TIMESTAMP=2017%2d01%2d19T17%3a02%3a16Z&CORRELATIONID=7b39f6a15de6a&ACK=Success&VERSION=72%2e0&BUILD=28806785&EMAIL=maji%2dtest%2dbuyer%40charitywater%2eorg&PAYERID=KV8YLGHNPVT8Q&PAYERSTATUS=verified&FIRSTNAME=Maji&LASTNAME=Test&COUNTRYCODE=US&SHIPTONAME=Maji%20Test&SHIPTOSTREET=1%20Main%20St&SHIPTOCITY=San%20Jose&SHIPTOSTATE=CA&SHIPTOZIP=95131&SHIPTOCOUNTRYCODE=US&SHIPTOCOUNTRYNAME=United%20States&ADDRESSSTATUS=Confirmed&CURRENCYCODE=USD&AMT=73%2e33&SHIPPINGAMT=0%2e00&HANDLINGAMT=0%2e00&TAXAMT=0%2e00&DESC=Monthly%20Giving&INSURANCEAMT=0%2e00&SHIPDISCAMT=0%2e00&PAYMENTREQUEST_0_CURRENCYCODE=USD&PAYMENTREQUEST_0_AMT=73%2e33&PAYMENTREQUEST_0_SHIPPINGAMT=0%2e00&PAYMENTREQUEST_0_HANDLINGAMT=0%2e00&PAYMENTREQUEST_0_TAXAMT=0%2e00&PAYMENTREQUEST_0_DESC=Monthly%20Giving&PAYMENTREQUEST_0_INSURANCEAMT=0%2e00&PAYMENTREQUEST_0_SHIPDISCAMT=0%2e00&PAYMENTREQUEST_0_INSURANCEOPTIONOFFERED=false&PAYMENTREQUEST_0_SHIPTONAME=Maji%20Test&PAYMENTREQUEST_0_SHIPTOSTREET=1%20Main%20St&PAYMENTREQUEST_0_SHIPTOCITY=San%20Jose&PAYMENTREQUEST_0_SHIPTOSTATE=CA&PAYMENTREQUEST_0_SHIPTOZIP=95131&PAYMENTREQUEST_0_SHIPTOCOUNTRYCODE=US&PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME=United%20States&PAYMENTREQUEST_0_ADDRESSSTATUS=Confirmed&PAYMENTREQUESTINFO_0_ERRORCODE=0
+    http_version: 
+  recorded_at: Thu, 19 Jan 2017 17:02:17 GMT
+recorded_with: VCR 3.0.3
