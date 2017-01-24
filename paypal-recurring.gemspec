@@ -18,10 +18,12 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rspec"
+  s.add_development_dependency "its"
+  s.add_development_dependency "rspec-collection_matchers"
   s.add_development_dependency "rake"
   s.add_development_dependency "vcr"
   s.add_development_dependency "fakeweb"
-  s.add_development_dependency "pry"
+  s.add_development_dependency "pry-byebug"
   s.add_development_dependency "awesome_print"
   s.add_development_dependency "activesupport"
 end

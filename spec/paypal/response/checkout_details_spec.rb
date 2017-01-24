@@ -1,11 +1,11 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe PayPal::Recurring::Response::Details do
   context "when successful" do
-    use_vcr_cassette "details/success"
+    use_vcr_cassette("details/success")
 
     subject {
-      ppr = PayPal::Recurring.new(:token => "EC-08C2125544495393T")
+      ppr = PayPal::Recurring.new(:token => "EC-90D28589JF9704647")
       ppr.checkout_details
     }
 
@@ -14,15 +14,16 @@ describe PayPal::Recurring::Response::Details do
 
     its(:errors) { should be_empty }
     its(:status) { should == "PaymentActionNotInitiated" }
-    its(:email) { should == "fnando.vieira+br@gmail.com" }
+    its(:email) { should == "maji-test-buyer@charitywater.org" }
     its(:requested_at) { should be_a(Time) }
-    its(:payer_id) { should == "D2U7M6PTMJBML" }
-    its(:payer_status) { should == "unverified" }
-    its(:country) { should == "BR" }
-    its(:currency) { should == "BRL" }
-    its(:description) { should == "Awesome - Monthly Subscription" }
-    its(:ipn_url) { should == "http://example.com/paypal/ipn" }
-    its(:agreed?) { should be_true }
+    its(:payer_id) { should == "KV8YLGHNPVT8Q" }
+    its(:payer_status) { should == "verified" }
+    its(:country) { should == "US" }
+    its(:currency) { should == "USD" }
+    its(:description) { should == "Monthly Giving" }
+    its(:ipn_url) { should be nil }
+    its(:agreed?) { should be true }
+    its(:postal_code) { should == "95131" }
   end
 
   context "when cancelled" do
@@ -35,7 +36,7 @@ describe PayPal::Recurring::Response::Details do
     it { should be_valid }
     it { should be_success }
 
-    its(:agreed?) { should be_false }
+    its(:agreed?) { should be false }
   end
 
   context "when failure" do
