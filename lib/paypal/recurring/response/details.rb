@@ -14,7 +14,8 @@ module PayPal
           :amount       => :AMT,
           :description  => :DESC,
           :ipn_url      => :NOTIFYURL,
-          :postal_code  => :SHIPTOZIP
+          :postal_code  => :SHIPTOZIP,
+          :shipping_country => :SHIPTOCOUNTRYCODE
         )
 
         def agreed?
