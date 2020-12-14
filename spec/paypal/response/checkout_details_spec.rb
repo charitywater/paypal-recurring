@@ -24,6 +24,7 @@ describe PayPal::Recurring::Response::Details do
     its(:ipn_url) { should be nil }
     its(:agreed?) { should be true }
     its(:postal_code) { should == "95131" }
+    its(:shipping_country) { should == "US" }
   end
 
   context "when cancelled" do
