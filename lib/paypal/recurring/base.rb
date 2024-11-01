@@ -13,6 +13,7 @@ module PayPal
       attr_accessor :initial_amount_action
       attr_accessor :ipn_url
       attr_accessor :locale
+      attr_accessor :no_shipping
       attr_accessor :outstanding
       attr_accessor :payer_id
       attr_accessor :period
@@ -72,7 +73,7 @@ module PayPal
           :item_quantity
         ).merge(
           :payment_action => "Authorization",
-          :no_shipping => 0,
+          :no_shipping => no_shipping || 0,
           :L_BILLINGTYPE0 => "RecurringPayments"
         )
 
